@@ -39,7 +39,16 @@ function App() {
           paddingRight: '206px',
           paddingBottom: '0',
           paddingLeft: '206px',
-          mt: '64px'
+          mt: '64px',
+          '@media (max-width: 600px)': {
+              width: '100%',
+              paddingRight: '24px',
+              paddingLeft: '24px',
+              '& > *': {
+                  minWidth: '239px',
+                  flexShrink: 0,
+              },
+          },
         }}>
           <Typography variant="h4" sx={{ fontSize: '36px', fontWeight: 'bold', color: "secondary.main"}}>Explore Experiences</Typography>
           <ContentBox />

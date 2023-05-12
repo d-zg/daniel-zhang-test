@@ -4,6 +4,8 @@ import { Box, CircularProgress, Typography } from '@mui/material';
 import CategoryToggle from './CategoryToggles';
 import ContentCard from './ContentCard';
 import CategoryBox from './CategoryBox';
+import CategoryGrid from './CategoryGrid';
+import SelectedCategoryToggle from './SelectedCategoryToggle';
 interface Category {
     id: string;
     title: string;
@@ -23,8 +25,9 @@ interface ApiResponse {
 
 const ContentBox : any = () => {
     const [loading, setLoading] = useState<boolean>(true);
-    const [categories, setCategories] = useState<Array<Category>>([]);  
-    const [currentCategory, setCategory] = useState<number>(0);
+    const [categories, setCategories] = useState<Category[]>([]);  
+    const [currentCategory, setCategory]:  [number, (value: number) => void] = useState<number>(0);
+    console.log(currentCategory)
 
     useEffect(() => {
         fetch('https://www.marcoexperiences.com/api/experiences/explore_test')
@@ -44,9 +47,59 @@ const ContentBox : any = () => {
     }
     console.log(categories)
 
-    if (currentCategory) {
+    let counter : number = 1; 
 
+    // callback for toggles. 
+    // 0: default
+    function handleClick(categoryNumber: number) { 
+        if (categoryNumber === currentCategory) {
+            setCategory(0);
+        } else {
+            setCategory(categoryNumber);
+        }
+        console.log(currentCategory);
     }
+
+    // Just render a box with a grid display
+    // pass in just the category[currentCategory-1] to render
+    // also render the toggles, with the currently pressed one with white color
+    if (currentCategory !== 0) {
+        const num : number = currentCategory-1;
+        const categoryToUse : Category = categories[num]
+        console.log('this')
+        console.log(currentCategory as number)
+        
+        return (
+            <Box sx={{ alignContent: 'center' }}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'left',
+                    
+                    '& > *': {
+                        marginRight: 1,
+                    },
+                    bgcolor: 'primary.main',
+                    pt: '60px',
+                    pb: '60px',
+                    overflowX: 'auto',
+                    '&::-webkit-scrollbar': {
+                    display: 'none',
+                    },
+            }}>
+                {categories.map((category: Category) => (
+                    counter === currentCategory ? 
+                        <SelectedCategoryToggle onClick={handleClick} id={counter++} categoryName={category.title} />
+                        :
+                        <CategoryToggle onClick={handleClick} id={counter++} categoryName={category.title} />
+                ))}
+            </Box>
+            <CategoryGrid category={categoryToUse} />
+        </Box>
+        )
+    }
+    
     return (
         <Box sx={{ alignContent: 'center' }}>
             {/* <Typography sx = {{ color: 'secondary.main' }}>Done</Typography> */}
@@ -62,13 +115,13 @@ const ContentBox : any = () => {
                     bgcolor: 'primary.main',
                     pt: '60px',
                     pb: '60px',
-            }}>
-                    {categories.map((category: Category) => (
-                    <CategoryToggle key={category.id} categoryName={category.title} />
-                    ))}
+            }}>     
+                {categories.map((category: Category) => (
+                <CategoryToggle onClick={handleClick} id={counter++} categoryName={category.title} />
+                ))}
             </Box>
             {categories.map((category: Category) => (
-                    <CategoryBox category={category} />
+                <CategoryBox category={category} />
             ))}
         </Box>
     )

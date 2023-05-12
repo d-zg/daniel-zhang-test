@@ -1,7 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import { CategoryToggleProps } from './types';
-import useCategoryToggle from './useCategoryToggle';
 import { Typography } from '@mui/material';
 
 const CategoryToggle1: any = styled('div')({
@@ -34,12 +33,13 @@ const CategoryToggle2: any = styled('div')(({ theme }: any) => ({
 
 
 function CategoryToggle(props: CategoryToggleProps): any {
-  const { fns } = useCategoryToggle(props);
-
   return (
     <CategoryToggle1 className={props.className}>
       <CategoryToggle2>
-        <Typography sx={{ fontSize: "12px", fontWeight: "bold", color: "secondary.main" }}>{props.categoryName}</Typography>
+        <Typography onClick={()=> props.onClick(props.id as number)} 
+            sx={{ fontSize: "12px", fontWeight: "bold", color: "secondary.main" }}>
+                {props.categoryName}
+        </Typography>
       </CategoryToggle2>
     </CategoryToggle1>
   );

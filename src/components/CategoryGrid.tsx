@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material'
 import ContentCard from './ContentCard';
 
-const CategoryBox = ({ category }: any) => {
+const CategoryGrid = ({ category }: any) => {
     return (
       <Box
         sx={{
@@ -19,27 +19,23 @@ const CategoryBox = ({ category }: any) => {
           {category.title}
         </Typography>
         <Box
-          sx={{
-            display: "flex",
-            flexDirection: 'row',
-            alignItems: "left",
-            // width: "100%",
-            overflowX: "auto",
-            scrollBehavior: "smooth",
-                "&::-webkit-scrollbar": {
-            display: "none",
-            gap: '10px',
-            '@media (max-width: 600px)': {
-              width: '100%',
-              minWidth: '100%',
-              whiteSpace: 'nowrap',
-              '& > *': {
-                  minWidth: '239px',
-                  flexShrink: 0,
-              },
-            },
-        },
-          }}
+  sx={{
+    alignItems: "left",
+    width: "100%",
+    gap: '0px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
+    // padding: '0px 20px', // add padding on left and right sides
+    '& > *': {
+        width: 'calc(25% - 10px)', // subtract margin from 25% to fit 4 items in a row
+        margin: '0 10px 16px 0', // add margin to right and bottom of each item
+        '&:nth-child(4n)': {
+            marginRight: 0, // remove right margin from the fourth item in each row
+        }
+    }
+  }}
         >
           {category.items.map((item: any) => (
             <ContentCard title={item.title} host={item.host} img={item.img} />
@@ -49,4 +45,4 @@ const CategoryBox = ({ category }: any) => {
     );
 };
   
-export default CategoryBox;
+export default CategoryGrid;
