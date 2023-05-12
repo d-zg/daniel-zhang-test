@@ -34,7 +34,8 @@ const CategoryBox = ({ category }: any) => {
               minWidth: '100%',
               whiteSpace: 'nowrap',
               '& > *': {
-                  minWidth: '239px',
+                  width: '80%',
+                  minwidth: "239px",
                   flexShrink: 0,
               },
             },

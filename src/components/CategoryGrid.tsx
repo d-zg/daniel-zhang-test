@@ -34,7 +34,17 @@ const CategoryGrid = ({ category }: any) => {
         '&:nth-child(4n)': {
             marginRight: 0, // remove right margin from the fourth item in each row
         }
-    }
+    },
+    '@media (max-width: 600px)': {
+        width: '100%',
+        minWidth: '100%',
+        alignItems: "left",
+        whiteSpace: 'nowrap',
+        '& > *': {
+          width: '90%',
+          flexShrink: 0,
+        },
+    },
   }}
         >
           {category.items.map((item: any) => (

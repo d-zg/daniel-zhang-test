@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Box, CircularProgress, Typography } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 import CategoryToggle from './CategoryToggles';
-import ContentCard from './ContentCard';
 import CategoryBox from './CategoryBox';
 import CategoryGrid from './CategoryGrid';
 import SelectedCategoryToggle from './SelectedCategoryToggle';
@@ -66,8 +65,6 @@ const ContentBox : any = () => {
     if (currentCategory !== 0) {
         const num : number = currentCategory-1;
         const categoryToUse : Category = categories[num]
-        console.log('this')
-        console.log(currentCategory as number)
         
         return (
             <Box sx={{ alignContent: 'center' }}>
