@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ContentBox from './components/ContentBox';
-import { Box, createTheme, ThemeProvider, Typography } from '@mui/material'
+import { Box, createTheme, CssBaseline, ThemeProvider, Typography } from '@mui/material'
 import TopNav from './components/TopNav';
 function App() {
   const isMobile = window.innerWidth < 600;
@@ -21,6 +21,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Box bgcolor="primary.main" sx={{
         display: 'flex',
         height: '100%',
@@ -43,7 +44,7 @@ function App() {
           mt: '64px',
           '@media (max-width: 600px)': {
               width: '100%',
-              paddingRight: '24px',
+              paddingRight: '0px',
               paddingLeft: '24px',
               paddingTop: '40px',
               paddingBottom: '24px',
@@ -59,6 +60,11 @@ function App() {
                 width: '100%',
                 minWidth: '100%',
                 alignItems: "left",
+                whiteSpace: 'nowrap',
+                '& > *': {
+                  width: '90%',
+                  flexShrink: 0,
+                },
             },
             }}>Explore
             {isMobile ? <br/> : ' '}

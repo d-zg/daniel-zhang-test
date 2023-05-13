@@ -5,7 +5,6 @@ const ContentCard : any = (props: ContentCardProps) => {
     return(
         <Card sx={{ 
             flexShrink: 0, 
-            mr: "20px", 
             elevation: "0", 
             border: 'none', 
             width: "calc(25% - 20px)", 

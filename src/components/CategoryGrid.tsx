@@ -22,19 +22,12 @@ const CategoryGrid = ({ category }: any) => {
   sx={{
     alignItems: "left",
     width: "100%",
-    gap: '0px',
+    columnGap: '20px',
     gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
     // padding: '0px 20px', // add padding on left and right sides
-    '& > *': {
-        width: 'calc(25% - 10px)', // subtract margin from 25% to fit 4 items in a row
-        margin: '0 10px 16px 0', // add margin to right and bottom of each item
-        '&:nth-child(4n)': {
-            marginRight: 0, // remove right margin from the fourth item in each row
-        }
-    },
     '@media (max-width: 600px)': {
         width: '100%',
         minWidth: '100%',

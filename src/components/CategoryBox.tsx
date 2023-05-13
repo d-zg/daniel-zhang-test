@@ -25,6 +25,7 @@ const CategoryBox = ({ category }: any) => {
             alignItems: "left",
             // width: "100%",
             overflowX: "auto",
+            columnGap: "20px",
             scrollBehavior: "smooth",
                 "&::-webkit-scrollbar": {
             display: "none",
