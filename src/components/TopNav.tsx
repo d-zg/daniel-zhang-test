@@ -18,7 +18,7 @@ const TopNav1: any = styled('div')(({ theme }: any) => ({
 
 const Rectangle4: any = styled('div')({
   backgroundColor: `rgba(255, 255, 255, 0.15)`,
-  width: `1440px`,
+  width: `100%`,
   height: `1px`,
   position: `absolute`,
   left: `0px`,

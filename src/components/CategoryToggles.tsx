@@ -14,6 +14,7 @@ const CategoryToggle1: any = styled('div')({
   boxSizing: `border-box`,
   height: 'auto',
   width: 'fit-content',
+
 });
 
 const CategoryToggle2: any = styled('div')(({ theme }: any) => ({

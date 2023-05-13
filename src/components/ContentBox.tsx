@@ -99,7 +99,6 @@ const ContentBox : any = () => {
     
     return (
         <Box sx={{ alignContent: 'center' }}>
-            {/* <Typography sx = {{ color: 'secondary.main' }}>Done</Typography> */}
             <Box
                 sx={{
                     display: 'flex',

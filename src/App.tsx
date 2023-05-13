@@ -44,13 +44,27 @@ function App() {
               width: '100%',
               paddingRight: '24px',
               paddingLeft: '24px',
-              '& > *': {
-                  minWidth: '239px',
-                  flexShrink: 0,
-              },
+              paddingTop: '40px',
+              paddingBottom: '24px',
           },
         }}>
-          <Typography variant="h4" sx={{ fontSize: '36px', fontWeight: 'bold', color: "secondary.main"}}>Explore Experiences</Typography>
+          <Typography 
+            variant="h4" 
+            sx={{ 
+              fontSize: '40px', 
+              fontWeight: 'bold', 
+              color: "secondary.main",
+              '@media (max-width: 600px)': {
+                width: '100%',
+                minWidth: '100%',
+                alignItems: "left",
+                whiteSpace: 'nowrap',
+                '& > *': {
+                  width: '90%',
+                  flexShrink: 0,
+                },
+            },
+            }}>Explore<br />Experiences</Typography>
           <ContentBox />
         </Box>
         

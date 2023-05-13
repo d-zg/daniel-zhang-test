@@ -3,7 +3,24 @@ import { CardMedia, Card, Typography } from '@mui/material'
 import { ContentCardProps } from './types';
 const ContentCard : any = (props: ContentCardProps) => {
     return(
-        <Card sx={{ flexShrink: 0, mr: "10px", elevation: "0", border: 'none', width: "calc(25% - 10px)", maxHeight: "400px", bgcolor: "primary.main" }}>
+        <Card sx={{ 
+            flexShrink: 0, 
+            mr: "10px", 
+            elevation: "0", 
+            border: 'none', 
+            width: "calc(25% - 10px)", 
+            maxHeight: "400px", 
+            bgcolor: "primary.main",
+            '@media (max-width: 600px)': {
+                width: '90%',
+                alignItems: "left",
+                whiteSpace: 'nowrap',
+                '& > *': {
+                  width: '90%',
+                  flexShrink: 0,
+                },
+            },
+        }}>
             <CardMedia component="img" height="319px" sx={{ width: '100%' }} image={props.img} />
             
             <Typography variant="h5" sx={{ color: "secondary.main", fontWeight: 'bold', fontSize: 18, mt: 1 }}>
