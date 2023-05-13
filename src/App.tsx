@@ -26,13 +26,19 @@ function App() {
         display: 'flex',
         height: '100%',
         width: '100%',
+        maxWidth: '100%',
         overflow: 'auto',
         flexDirection: 'column',
+        scrollBehavior: "smooth",
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
       }}>
         <TopNav />
         <Box
         sx={{
           height: '100%',
+          maxWidth: '100%',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
@@ -53,7 +59,7 @@ function App() {
           <Typography 
             variant="h4" 
             sx={{ 
-              fontSize: '40px', 
+              fontSize: '36px', 
               fontWeight: 'bold', 
               color: "secondary.main",
               '@media (max-width: 600px)': {

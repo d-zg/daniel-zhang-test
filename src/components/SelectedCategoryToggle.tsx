@@ -37,7 +37,15 @@ function SelectedCategoryToggle(props: CategoryToggleProps): any {
     <CategoryToggle1 className={props.className}>
       <CategoryToggle2>
         <Typography onClick={()=> props.onClick(props.id as number)} 
-            sx={{ fontSize: "12px", fontWeight: "bold", color: "primary.main" }}>
+            sx={{ 
+              fontSize: "14px",
+              fontWeight: "bold", 
+              color: "primary.main",
+              whiteSpace: 'nowrap',
+              '@media (max-width: 600px)': {
+                fontSize: '18px', // font size for mobile
+                padding: '12px 16px', // padding for mobile
+              }, }}>
                 {props.categoryName}
         </Typography>
       </CategoryToggle2>

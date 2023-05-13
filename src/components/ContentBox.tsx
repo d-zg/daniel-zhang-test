@@ -67,7 +67,7 @@ const ContentBox : any = () => {
         const categoryToUse : Category = categories[num]
         
         return (
-            <Box sx={{ width: '100%', alignContent: 'center' }}>
+            <Box sx={{ width: '100%', maxWidth: '100%', alignContent: 'center' }}>
             <Box
                 sx={{
                     display: 'flex',
@@ -77,6 +77,7 @@ const ContentBox : any = () => {
                     '& > *': {
                         marginRight: 1,
                     },
+                    maxWidth: '100%',
                     bgcolor: 'primary.main',
                     pt: '60px',
                     pb: '60px',
@@ -104,9 +105,13 @@ const ContentBox : any = () => {
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'left',
-                    
                     '& > *': {
                         marginRight: 1,
+                    },
+                    maxWidth: '100%',
+                    overflowX: 'auto',
+                    '&::-webkit-scrollbar': {
+                        display: 'none',
                     },
                     bgcolor: 'primary.main',
                     pt: '60px',

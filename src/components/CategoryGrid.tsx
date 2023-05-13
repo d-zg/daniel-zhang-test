@@ -15,7 +15,7 @@ const CategoryGrid = ({ category }: any) => {
           mb: "20px",
         }}
       >
-        <Typography variant="h4" sx={{ color: "secondary.main", fontSize: "24px", fontWeight: "bold", marginBottom: "1rem" }}>
+        <Typography variant="h4" sx={{ color: "secondary.main", fontSize: "26px", fontWeight: "bold", marginBottom: "1rem" }}>
           {category.title}
         </Typography>
         <Box
@@ -31,7 +31,7 @@ const CategoryGrid = ({ category }: any) => {
     '@media (max-width: 600px)': {
         width: '100%',
         minWidth: '100%',
-        alignItems: "left",
+        alignItems: "center",
         whiteSpace: 'nowrap',
         '& > *': {
           width: '90%',

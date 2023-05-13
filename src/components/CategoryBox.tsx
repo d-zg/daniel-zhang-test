@@ -15,7 +15,7 @@ const CategoryBox = ({ category }: any) => {
           mb: "20px",
         }}
       >
-        <Typography variant="h4" sx={{ color: "secondary.main", fontSize: "24px", fontWeight: "bold", marginBottom: "1rem" }}>
+        <Typography variant="h4" sx={{ color: "secondary.main", fontSize: "26px", fontWeight: "bold", marginBottom: "1rem" }}>
           {category.title}
         </Typography>
         <Box
