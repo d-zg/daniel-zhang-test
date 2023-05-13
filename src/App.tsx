@@ -23,15 +23,15 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box bgcolor="primary.main" sx={{
         display: 'flex',
-        height: '100vh',
-        width: '100vw',
+        height: '100%',
+        width: '100%',
         overflow: 'auto',
         flexDirection: 'column',
       }}>
         <TopNav />
         <Box
         sx={{
-          height: '100vh',
+          height: '100%',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
@@ -59,11 +59,6 @@ function App() {
                 width: '100%',
                 minWidth: '100%',
                 alignItems: "left",
-                whiteSpace: 'nowrap',
-                '& > *': {
-                  width: '90%',
-                  flexShrink: 0,
-                },
             },
             }}>Explore
             {isMobile ? <br/> : ' '}

@@ -28,7 +28,6 @@ const CategoryBox = ({ category }: any) => {
             scrollBehavior: "smooth",
                 "&::-webkit-scrollbar": {
             display: "none",
-            gap: '10px',
             '@media (max-width: 600px)': {
               width: '100%',
               minWidth: '100%',

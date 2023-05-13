@@ -67,7 +67,7 @@ const ContentBox : any = () => {
         const categoryToUse : Category = categories[num]
         
         return (
-            <Box sx={{ alignContent: 'center' }}>
+            <Box sx={{ width: '100%', alignContent: 'center' }}>
             <Box
                 sx={{
                     display: 'flex',

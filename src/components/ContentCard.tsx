@@ -5,10 +5,11 @@ const ContentCard : any = (props: ContentCardProps) => {
     return(
         <Card sx={{ 
             flexShrink: 0, 
-            mr: "10px", 
+            mr: "20px", 
             elevation: "0", 
             border: 'none', 
-            width: "calc(25% - 10px)", 
+            width: "calc(25% - 20px)", 
+            // maxWidth: "273px",
             maxHeight: "400px", 
             bgcolor: "primary.main",
             '@media (max-width: 600px)': {
