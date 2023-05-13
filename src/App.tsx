@@ -4,6 +4,7 @@ import ContentBox from './components/ContentBox';
 import { Box, createTheme, ThemeProvider, Typography } from '@mui/material'
 import TopNav from './components/TopNav';
 function App() {
+  const isMobile = window.innerWidth < 600;
   const theme : any = createTheme({
     palette: {
       primary: {
@@ -64,7 +65,9 @@ function App() {
                   flexShrink: 0,
                 },
             },
-            }}>Explore<br />Experiences</Typography>
+            }}>Explore
+            {isMobile ? <br/> : ' '}
+            Experiences</Typography>
           <ContentBox />
         </Box>
         
