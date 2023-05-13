@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/daniel-zhang-test/static/css/main.073c9b0a.css",
-    "main.js": "/daniel-zhang-test/static/js/main.2dca51ad.js",
+    "main.js": "/daniel-zhang-test/static/js/main.f1322b10.js",
     "static/js/787.d7b698df.chunk.js": "/daniel-zhang-test/static/js/787.d7b698df.chunk.js",
     "static/media/topnav_marco_wordmark_white_1.png": "/daniel-zhang-test/static/media/topnav_marco_wordmark_white_1.19d94dc309ce58ec5738.png",
     "index.html": "/daniel-zhang-test/index.html",
     "main.073c9b0a.css.map": "/daniel-zhang-test/static/css/main.073c9b0a.css.map",
-    "main.2dca51ad.js.map": "/daniel-zhang-test/static/js/main.2dca51ad.js.map",
+    "main.f1322b10.js.map": "/daniel-zhang-test/static/js/main.f1322b10.js.map",
     "787.d7b698df.chunk.js.map": "/daniel-zhang-test/static/js/787.d7b698df.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.2dca51ad.js"
+    "static/js/main.f1322b10.js"
   ]
 }
